@@ -2,7 +2,7 @@
 
 export DisableArcade=1
 
-dotnet pack $SRC_DIR/src/dotnet-interactive/dotnet-interactive.csproj
+dotnet pack --configuration Release --runtime linux-x64 $SRC_DIR/src/dotnet-interactive/dotnet-interactive.csproj
 dotnet tool install --add-source $SRC_DIR/src/dotnet-interactive/bin/Debug --tool-path $DOTNET_TOOLS Microsoft.dotnet-interactive
 
 mkdir "$PREFIX/share/jupyter"
