@@ -1,5 +1,5 @@
 {% set name = "dotnet-interactive" %}
-{% set version = "1.0.221505" %}
+{% set version = "1.0.225602" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/dotnet/interactive/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 2cfab6b8f9702c01825f2e0a7af91d5e7e4847d7b5d85a4a787cf46fef02a561
+  sha256: 234efeaff27f60038d81d3511abcc6fc9bbe1c69958e6c3ea35a6afca548dae7
 
 build:
   skip: true  # [not win]
@@ -27,7 +27,7 @@ about:
   home: https://github.com/dotnet/interactive
   license: MIT
   license_file: License.txt
-  summary: '.NET Interactive takes the power of .NET and embeds it into your interactive experiences'
+  summary: .NET Interactive takes the power of .NET and embeds it into your interactive experiences
 
 extra:
   recipe-maintainers:
