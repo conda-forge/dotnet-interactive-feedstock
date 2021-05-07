@@ -2,9 +2,10 @@ setlocal enableextensions
 setlocal enabledelayedexpansion
 
 
-set SOURCE="https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-tools/nuget/v3/index.json"
+set DisableArcade=1
 
-dotnet tool install --add-source %SOURCE% --tool-path "%PREFIX%/dotnet/tools" Microsoft.dotnet-interactive
+dotnet pack --configuration Release --runtime win-x64 %SRC_DIR%/src/dotnet-interactive/dotnet-interactive.csproj
+dotnet tool install --framework net5.0 --add-source %SRC_DIR%/src/dotnet-interactive/bin/X64/Release --tool-path %DOTNET_TOOLS% Microsoft.dotnet-interactive
 
 mkdir "%PREFIX%\share\jupyter"
 xcopy "%RECIPE_DIR%\kernels" "%PREFIX%\share\jupyter\kernels" /E /I /F /Y
