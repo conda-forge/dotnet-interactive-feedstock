@@ -24,7 +24,8 @@ requirements:
 test:
   commands:
     - dotnet interactive --version
-    - ! test -z $DOTNET_INTERACTIVE_SKIP_FIRST_TIME_EXPERIENCEX  # [unix]
+    - (! test -z $DOTNET_INTERACTIVE_SKIP_FIRST_TIME_EXPERIENCEX)  # [unix]
+    - if not defined DOTNET_INTERACTIVE_SKIP_FIRST_TIME_EXPERIENCEX exit 1  # [win]
 
 about:
   home: https://github.com/dotnet/interactive
