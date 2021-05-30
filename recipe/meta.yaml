@@ -24,6 +24,7 @@ requirements:
 test:
   commands:
     - dotnet interactive --version
+    - env | sort  # [unix]
     - (! test -z $DOTNET_INTERACTIVE_SKIP_FIRST_TIME_EXPERIENCE)  # [unix]
     - if not defined DOTNET_INTERACTIVE_SKIP_FIRST_TIME_EXPERIENCE exit 1  # [win]
 
