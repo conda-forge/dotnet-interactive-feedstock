@@ -9,3 +9,9 @@ dotnet tool install --framework net5.0 --add-source %SRC_DIR%/src/dotnet-interac
 
 mkdir "%PREFIX%\share\jupyter"
 xcopy "%RECIPE_DIR%\kernels" "%PREFIX%\share\jupyter\kernels" /E /I /F /Y
+
+
+mkdir "%PREFIX%/etc/conda/activate.d"
+mkdir "%PREFIX%/etc/conda/deactivate.d"
+xcopy "%RECIPE_DIR%/activate.d" "%PREFIX%/etc/conda/activate.d" /E /I /F /Y
+xcopy "%RECIPE_DIR%/deactivate.d" "%PREFIX%/etc/conda/deactivate.d" /E /I /F /Y
