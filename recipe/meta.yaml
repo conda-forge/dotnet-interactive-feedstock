@@ -1,13 +1,13 @@
 {% set name = "dotnet-interactive" %}
-{% set version = "1.0.2309030" %}
+{% set version = "1.0.2580040" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/dotnet/interactive/archive/refs/tags/{{ version }}.tar.gz
-  sha256: c4675da7971edcd64227cd54f6dd8b7232cd0f7def4fff94bb99d95cd1ecdf4a
+  url: https://github.com/dotnet/interactive/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: e798b8d1882664679a1a845c13be1f2bceecf66d608a455e0ff455b63826fba9
 
 build:
   skip: true  # [osx]
