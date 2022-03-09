@@ -2,6 +2,11 @@
 
 export DisableArcade=1
 
+echo '##############################################'
+ls -la $SRC_DIR
+echo '##############################################'
+ls -la $SRC_DIR/src
+echo '##############################################'
 
 pushd $SRC_DIR/src/microsoft-dotnet-interactive
 npm ci
