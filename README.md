@@ -27,24 +27,10 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_nodejs14</td>
+              <td>linux_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=11356&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dotnet-interactive-feedstock?branchName=master&jobName=linux&configuration=linux_64_nodejs14" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_nodejs16</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=11356&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dotnet-interactive-feedstock?branchName=master&jobName=linux&configuration=linux_64_nodejs16" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_nodejs17</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=11356&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dotnet-interactive-feedstock?branchName=master&jobName=linux&configuration=linux_64_nodejs17" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dotnet-interactive-feedstock?branchName=master&jobName=linux&configuration=linux_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
