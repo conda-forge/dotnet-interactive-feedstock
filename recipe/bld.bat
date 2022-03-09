@@ -14,7 +14,9 @@ for %%P in (
     pushd %%P
     echo %%P
     npm ci
+    if %errorlevel% neq 0 exit /b %errorlevel%
     npm run compile
+    if %errorlevel% neq 0 exit /b %errorlevel%
     popd
 )
 

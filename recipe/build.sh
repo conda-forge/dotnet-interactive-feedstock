@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euox pipefail
 
 export DisableArcade=1
 export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
