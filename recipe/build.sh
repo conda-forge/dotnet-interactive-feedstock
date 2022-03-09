@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export DisableArcade=1
-
+export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 
 dotnet run -p $SRC_DIR/src/interface-generator --out-file $SRC_DIR/src/dotnet-interactive-vscode/src/interfaces/src/contracts.ts
 dotnet run -p $SRC_DIR/src/interface-generator --out-file $SRC_DIR/src/dotnet-interactive-npm/src/dotnet-interactive/contracts.ts
