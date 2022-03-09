@@ -15,7 +15,7 @@ build:
 
 requirements:
   build:
-    - dotnet >=5.0.100
+    - dotnet ~=6.0
     - nodejs  # [linux64]
     - sysroot_linux-64 2.17  # [linux64]
   run:
