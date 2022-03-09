@@ -3,11 +3,6 @@
 export DisableArcade=1
 export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 
-echo '###########################################################'
-ls -la $SRC_DIR/src
-echo '###########################################################'
-
-
 dotnet run --project $SRC_DIR/src/interface-generator --out-file $SRC_DIR/src/dotnet-interactive-vscode/common/interfaces/contracts.ts
 npm_dirs=(
     "src/dotnet-interactive-npm"
