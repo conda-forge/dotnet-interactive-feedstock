@@ -5,14 +5,14 @@ setlocal enabledelayedexpansion
 set DisableArcade=1
 
 dotnet run --project %SRC_DIR%/src/interface-generator --out-file %SRC_DIR%/src/dotnet-interactive-vscode/common/interfaces/contracts.ts
-for %%npm_dir in (
+for %%P in (
     "%SRC_DIR%/src/dotnet-interactive-npm"
     "%SRC_DIR%/src/dotnet-interactive-vscode/stable"
     "%SRC_DIR%/src/dotnet-interactive-vscode/insiders"
     "%SRC_DIR%/src/Microsoft.DotNet.Interactive.Js"
 ) do (
-    pushd %%npm_dir
-    echo %%npm_dir
+    pushd %%P
+    echo %%P
     npm ci
     npm run compile
     popd
