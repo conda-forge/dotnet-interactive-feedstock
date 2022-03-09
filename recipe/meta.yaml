@@ -16,7 +16,7 @@ build:
 requirements:
   build:
     - dotnet ~=6.0
-    - nodejs <17  # [linux64]
+    - nodejs <17
     - sysroot_linux-64 2.17  # [linux64]
   run:
     - {{ pin_compatible('dotnet', max_pin="x") }}

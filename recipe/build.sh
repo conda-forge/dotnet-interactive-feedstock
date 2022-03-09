@@ -5,13 +5,14 @@ export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 
 dotnet run --project $SRC_DIR/src/interface-generator --out-file $SRC_DIR/src/dotnet-interactive-vscode/common/interfaces/contracts.ts
 npm_dirs=(
-    "src/dotnet-interactive-npm"
-    "src/dotnet-interactive-vscode/stable"
-    "src/dotnet-interactive-vscode/insiders"
-    "src/Microsoft.DotNet.Interactive.Js"
+    "$SRC_DIR/src/dotnet-interactive-npm"
+    "$SRC_DIR/src/dotnet-interactive-vscode/stable"
+    "$SRC_DIR/src/dotnet-interactive-vscode/insiders"
+    "$SRC_DIR/src/Microsoft.DotNet.Interactive.Js"
 )
 for npm_dir in ${npm_dirs[@]}; do
     pushd $npm_dir
+    echo $npm_dir
     npm ci
     npm run compile
     popd

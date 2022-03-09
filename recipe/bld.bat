@@ -4,6 +4,20 @@ setlocal enabledelayedexpansion
 
 set DisableArcade=1
 
+dotnet run --project %SRC_DIR%/src/interface-generator --out-file %SRC_DIR%/src/dotnet-interactive-vscode/common/interfaces/contracts.ts
+for %%npm_dir in (
+    "%SRC_DIR%/src/dotnet-interactive-npm"
+    "%SRC_DIR%/src/dotnet-interactive-vscode/stable"
+    "%SRC_DIR%/src/dotnet-interactive-vscode/insiders"
+    "%SRC_DIR%/src/Microsoft.DotNet.Interactive.Js"
+) do (
+    pushd %%npm_dir
+    echo %%npm_dir
+    npm ci
+    npm run compile
+    popd
+)
+
 dotnet pack --configuration Release --runtime win-x64 %SRC_DIR%/src/dotnet-interactive/dotnet-interactive.csproj
 dotnet tool install --framework net6.0 --add-source %SRC_DIR%/src/dotnet-interactive/bin/X64/Release --tool-path %DOTNET_TOOLS% Microsoft.dotnet-interactive
 
