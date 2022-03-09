@@ -3,9 +3,8 @@
 export DisableArcade=1
 export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 
-dotnet run -p $SRC_DIR/src/interface-generator --out-file $SRC_DIR/src/dotnet-interactive-vscode/src/interfaces/src/contracts.ts
-dotnet run -p $SRC_DIR/src/interface-generator --out-file $SRC_DIR/src/dotnet-interactive-npm/src/dotnet-interactive/contracts.ts
 
+dotnet run --project $SRC_DIR/src/interface-generator --out-file $SRC_DIR/src/dotnet-interactive-vscode/common/interfaces/contracts.ts
 dotnet pack --configuration Release --runtime linux-x64 $SRC_DIR/src/dotnet-interactive/dotnet-interactive.csproj
 dotnet tool install --framework net6.0 --add-source $SRC_DIR/src/dotnet-interactive/bin/Release --tool-path $DOTNET_TOOLS Microsoft.dotnet-interactive
 
