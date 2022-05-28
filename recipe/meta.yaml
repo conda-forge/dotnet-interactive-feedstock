@@ -1,5 +1,5 @@
 {% set name = "dotnet-interactive" %}
-{% set version = "1.0.260601" %}
+{% set version = "1.0.317301" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/dotnet/interactive/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: efe3199e3a152d3e0e81a7656162506e7ca0dae284b754e081adf95be438bc49
+  sha256: ec176e5cad085eb1994a8c58f862546ed77e4c9ddef1a261fdaed8a0aa23e950
 
 build:
   skip: true  # [not linux]
@@ -16,7 +16,7 @@ build:
 requirements:
   build:
     - dotnet ~=6.0
-    - nodejs <17
+    - nodejs
     - sysroot_linux-64 2.17  # [linux64]
   run:
     - {{ pin_compatible('dotnet', max_pin="x") }}
