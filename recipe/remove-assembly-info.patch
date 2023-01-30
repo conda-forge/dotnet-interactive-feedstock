@@ -1,3 +1,42 @@
+diff --git a/src/Microsoft.DotNet.Interactive.AspNetCore/Microsoft.DotNet.Interactive.AspNetCore.csproj b/src/Microsoft.DotNet.Interactive.AspNetCore/Microsoft.DotNet.Interactive.AspNetCore.csproj
+index 9aa539c8..bc2284d4 100644
+--- a/src/Microsoft.DotNet.Interactive.AspNetCore/Microsoft.DotNet.Interactive.AspNetCore.csproj
++++ b/src/Microsoft.DotNet.Interactive.AspNetCore/Microsoft.DotNet.Interactive.AspNetCore.csproj
+@@ -31,4 +31,8 @@
+     <ProjectReference Include="..\Microsoft.DotNet.Interactive.CSharp\Microsoft.DotNet.Interactive.CSharp.csproj" />
+   </ItemGroup>
+
++  <PropertyGroup>
++    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
++  </PropertyGroup>
++
+ </Project>
+diff --git a/src/Microsoft.DotNet.Interactive.Browser/Microsoft.DotNet.Interactive.Browser.csproj b/src/Microsoft.DotNet.Interactive.Browser/Microsoft.DotNet.Interactive.Browser.csproj
+index a3c8b126..114eee16 100644
+--- a/src/Microsoft.DotNet.Interactive.Browser/Microsoft.DotNet.Interactive.Browser.csproj
++++ b/src/Microsoft.DotNet.Interactive.Browser/Microsoft.DotNet.Interactive.Browser.csproj
+@@ -44,4 +44,8 @@
+     <None Include="extension.dib" Pack="true" PackagePath="interactive-extensions/dotnet" />
+   </ItemGroup>
+
++  <PropertyGroup>
++    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
++  </PropertyGroup>
++
+ </Project>
+diff --git a/src/Microsoft.DotNet.Interactive.CSharp/Microsoft.DotNet.Interactive.CSharp.csproj b/src/Microsoft.DotNet.Interactive.CSharp/Microsoft.DotNet.Interactive.CSharp.csproj
+index f4dfbcea..fed25356 100644
+--- a/src/Microsoft.DotNet.Interactive.CSharp/Microsoft.DotNet.Interactive.CSharp.csproj
++++ b/src/Microsoft.DotNet.Interactive.CSharp/Microsoft.DotNet.Interactive.CSharp.csproj
+@@ -33,4 +33,8 @@
+     <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="$(MicrosoftCodeAnalysisCommonVersion)" />
+   </ItemGroup>
+
++  <PropertyGroup>
++    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
++  </PropertyGroup>
++
+ </Project>
 diff --git a/src/Microsoft.DotNet.Interactive.Documents/Microsoft.DotNet.Interactive.Documents.csproj b/src/Microsoft.DotNet.Interactive.Documents/Microsoft.DotNet.Interactive.Documents.csproj
 index 5b4e16e4..28c352ad 100644
 --- a/src/Microsoft.DotNet.Interactive.Documents/Microsoft.DotNet.Interactive.Documents.csproj
@@ -11,12 +50,97 @@ index 5b4e16e4..28c352ad 100644
 +  </PropertyGroup>
 +
  </Project>
+diff --git a/src/Microsoft.DotNet.Interactive.ExtensionLab/Microsoft.DotNet.Interactive.ExtensionLab.csproj b/src/Microsoft.DotNet.Interactive.ExtensionLab/Microsoft.DotNet.Interactive.ExtensionLab.csproj
+index 71f5fffc..fa34e602 100644
+--- a/src/Microsoft.DotNet.Interactive.ExtensionLab/Microsoft.DotNet.Interactive.ExtensionLab.csproj
++++ b/src/Microsoft.DotNet.Interactive.ExtensionLab/Microsoft.DotNet.Interactive.ExtensionLab.csproj
+@@ -47,4 +47,8 @@
+     <None Include="$(OutputPath)/Microsoft.DotNet.Interactive.ExtensionLab.dll" Pack="true" PackagePath="interactive-extensions/dotnet" />
+   </ItemGroup>
+
++  <PropertyGroup>
++    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
++  </PropertyGroup>
++
+ </Project>
+diff --git a/src/Microsoft.DotNet.Interactive.FSharp/Microsoft.DotNet.Interactive.FSharp.fsproj b/src/Microsoft.DotNet.Interactive.FSharp/Microsoft.DotNet.Interactive.FSharp.fsproj
+index ab10dcf3..c5dc7fa2 100644
+--- a/src/Microsoft.DotNet.Interactive.FSharp/Microsoft.DotNet.Interactive.FSharp.fsproj
++++ b/src/Microsoft.DotNet.Interactive.FSharp/Microsoft.DotNet.Interactive.FSharp.fsproj
+@@ -56,4 +56,8 @@
+     <PackageReference Include="System.Security.Cryptography.Xml" Version="$(SystemSecurityCryptographyXmlVersion)" />
+   </ItemGroup>
+
++  <PropertyGroup>
++    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
++  </PropertyGroup>
++
+ </Project>
 diff --git a/src/Microsoft.DotNet.Interactive.Formatting/Microsoft.DotNet.Interactive.Formatting.csproj b/src/Microsoft.DotNet.Interactive.Formatting/Microsoft.DotNet.Interactive.Formatting.csproj
 index 0f64e304..41b25a32 100644
 --- a/src/Microsoft.DotNet.Interactive.Formatting/Microsoft.DotNet.Interactive.Formatting.csproj
 +++ b/src/Microsoft.DotNet.Interactive.Formatting/Microsoft.DotNet.Interactive.Formatting.csproj
 @@ -30,4 +30,8 @@
      <PackageReference Include="System.Memory" Version="4.5.5" />
+   </ItemGroup>
+
++  <PropertyGroup>
++    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
++  </PropertyGroup>
++
+ </Project>
+diff --git a/src/Microsoft.DotNet.Interactive.HttpRequest/Microsoft.DotNet.Interactive.HttpRequest.csproj b/src/Microsoft.DotNet.Interactive.HttpRequest/Microsoft.DotNet.Interactive.HttpRequest.csproj
+index e93a1388..c3945f9e 100644
+--- a/src/Microsoft.DotNet.Interactive.HttpRequest/Microsoft.DotNet.Interactive.HttpRequest.csproj
++++ b/src/Microsoft.DotNet.Interactive.HttpRequest/Microsoft.DotNet.Interactive.HttpRequest.csproj
+@@ -24,4 +24,8 @@
+     <None Include="$(OutputPath)/Microsoft.DotNet.Interactive.HttpRequest.dll" Pack="true" PackagePath="interactive-extensions/dotnet" />
+   </ItemGroup>
+
++  <PropertyGroup>
++    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
++  </PropertyGroup>
++
+ </Project>
+diff --git a/src/Microsoft.DotNet.Interactive.Journey/Microsoft.DotNet.Interactive.Journey.csproj b/src/Microsoft.DotNet.Interactive.Journey/Microsoft.DotNet.Interactive.Journey.csproj
+index ab85042c..92cb4366 100644
+--- a/src/Microsoft.DotNet.Interactive.Journey/Microsoft.DotNet.Interactive.Journey.csproj
++++ b/src/Microsoft.DotNet.Interactive.Journey/Microsoft.DotNet.Interactive.Journey.csproj
+@@ -47,4 +47,8 @@
+     <ProjectReference Include="..\Microsoft.DotNet.Interactive\Microsoft.DotNet.Interactive.csproj" />
+   </ItemGroup>
+
++  <PropertyGroup>
++    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
++  </PropertyGroup>
++
+ </Project>
+diff --git a/src/Microsoft.DotNet.Interactive.Jupyter/Microsoft.DotNet.Interactive.Jupyter.csproj b/src/Microsoft.DotNet.Interactive.Jupyter/Microsoft.DotNet.Interactive.Jupyter.csproj
+index 443d6f7b..74193c53 100644
+--- a/src/Microsoft.DotNet.Interactive.Jupyter/Microsoft.DotNet.Interactive.Jupyter.csproj
++++ b/src/Microsoft.DotNet.Interactive.Jupyter/Microsoft.DotNet.Interactive.Jupyter.csproj
+@@ -30,4 +30,9 @@
+   <ItemGroup>
+     <Folder Include="Utility\" />
+   </ItemGroup>
++
++  <PropertyGroup>
++    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
++  </PropertyGroup>
++
+ </Project>
+diff --git a/src/Microsoft.DotNet.Interactive.Mermaid/Microsoft.DotNet.Interactive.Mermaid.csproj b/src/Microsoft.DotNet.Interactive.Mermaid/Microsoft.DotNet.Interactive.Mermaid.csproj
+index 64c6f993..ce860683 100644
+--- a/src/Microsoft.DotNet.Interactive.Mermaid/Microsoft.DotNet.Interactive.Mermaid.csproj
++++ b/src/Microsoft.DotNet.Interactive.Mermaid/Microsoft.DotNet.Interactive.Mermaid.csproj
+@@ -14,9 +14,13 @@
+     <IncludeBuildOutput>true</IncludeBuildOutput>
+     <NoWarn>$(NoWarn);NU5100;VSTHRD002</NoWarn><!-- dll outside of lib/ folder -->
+   </PropertyGroup>
+-
++
+   <ItemGroup>
+     <ProjectReference Include="..\Microsoft.DotNet.Interactive\Microsoft.DotNet.Interactive.csproj" />
    </ItemGroup>
 
 +  <PropertyGroup>
