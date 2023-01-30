@@ -20,8 +20,9 @@ for npm_dir in ${npm_dirs[@]}; do
     npm run compile
     popd
 done
-dotnet pack --configuration Release --runtime linux-x64 $SRC_DIR/src/dotnet-interactive/dotnet-interactive.csproj /p:Version=$PKG_VERSION
-dotnet tool install --framework net7.0 --version $PKG_VERSION --add-source $SRC_DIR/src/dotnet-interactive/bin/Release --tool-path $DOTNET_TOOLS Microsoft.dotnet-interactive
+
+dotnet pack --configuration Release --runtime linux-x64 $SRC_DIR/src/dotnet-interactive/dotnet-interactive.csproj
+dotnet tool install --framework net7.0 --add-source $SRC_DIR/src/dotnet-interactive/bin/Release --tool-path $DOTNET_TOOLS Microsoft.dotnet-interactive
 
 mkdir "$PREFIX/share/jupyter"
 cp -Rv "$RECIPE_DIR/kernels" "$PREFIX/share/jupyter/kernels"
