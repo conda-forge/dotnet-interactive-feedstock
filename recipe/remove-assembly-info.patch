@@ -38,3 +38,48 @@ index 615d0599..5dda60a3 100644
 +</PropertyGroup>
 +
  </Project>
+diff --git a/src/Microsoft.DotNet.Interactive/Microsoft.DotNet.Interactive.csproj b/src/Microsoft.DotNet.Interactive/Microsoft.DotNet.Interactive.csproj
+index 1a128526..f9a0218d 100644
+--- a/src/Microsoft.DotNet.Interactive/Microsoft.DotNet.Interactive.csproj
++++ b/src/Microsoft.DotNet.Interactive/Microsoft.DotNet.Interactive.csproj
+@@ -14,11 +14,11 @@
+   </PropertyGroup>
+
+   <PropertyGroup>
+-    <MicrosoftCodeAnalysisAnalyzersVersion>2.9.6</MicrosoftCodeAnalysisAnalyzersVersion>
+-    <SystemRuntimeLoaderVersion>4.3.0</SystemRuntimeLoaderVersion>
+-    <SystemCollectionsImmutableVersion>5.0.0</SystemCollectionsImmutableVersion>
+-    <SystemReflectionMetadataVersion>5.0.0</SystemReflectionMetadataVersion>
+-    <SystemCommandLineVersion>2.0.0-beta4.22272.1</SystemCommandLineVersion>
++    <MicrosoftCodeAnalysisAnalyzersVersion>2.9.6</MicrosoftCodeAnalysisAnalyzersVersion>
++    <SystemRuntimeLoaderVersion>4.3.0</SystemRuntimeLoaderVersion>
++    <SystemCollectionsImmutableVersion>5.0.0</SystemCollectionsImmutableVersion>
++    <SystemReflectionMetadataVersion>5.0.0</SystemReflectionMetadataVersion>
++    <SystemCommandLineVersion>2.0.0-beta4.22272.1</SystemCommandLineVersion>
+   </PropertyGroup>
+
+   <ItemGroup>
+@@ -40,10 +40,10 @@
+   </ItemGroup>
+
+   <ItemGroup>
+-    <NuspecProperty Include="MicrosoftCodeAnalysisAnalyzersVersion=$(MicrosoftCodeAnalysisAnalyzersVersion)" />
+-    <NuspecProperty Include="SystemRuntimeLoaderVersion=$(SystemRuntimeLoaderVersion)" />
+-    <NuspecProperty Include="SystemReactiveVersion=$(SystemReactiveVersion)" />
+-    <NuspecProperty Include="SystemCommandLineVersion=$(SystemCommandLineVersion)" />
++    <NuspecProperty Include="MicrosoftCodeAnalysisAnalyzersVersion=$(MicrosoftCodeAnalysisAnalyzersVersion)" />
++    <NuspecProperty Include="SystemRuntimeLoaderVersion=$(SystemRuntimeLoaderVersion)" />
++    <NuspecProperty Include="SystemReactiveVersion=$(SystemReactiveVersion)" />
++    <NuspecProperty Include="SystemCommandLineVersion=$(SystemCommandLineVersion)" />
+     <NuspecProperty Include="FSharpCompilerPrivateScriptingVersion=$(FSharpCompilerPrivateScriptingVersion)" />
+   </ItemGroup>
+
+@@ -54,4 +54,8 @@
+
+   <Import Project="..\Microsoft.Dotnet.Interactive.Shared\Microsoft.Dotnet.Interactive.Shared.projitems" Label="Shared" />
+
++  <PropertyGroup>
++    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
++  </PropertyGroup>
++
+ </Project>
