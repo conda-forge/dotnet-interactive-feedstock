@@ -42,38 +42,6 @@ diff --git a/src/Microsoft.DotNet.Interactive/Microsoft.DotNet.Interactive.cspro
 index ff8879a8..6025b4b0 100644
 --- a/src/Microsoft.DotNet.Interactive/Microsoft.DotNet.Interactive.csproj
 +++ b/src/Microsoft.DotNet.Interactive/Microsoft.DotNet.Interactive.csproj
-@@ -14,11 +14,11 @@
-   </PropertyGroup>
-
-   <PropertyGroup>
--    <MicrosoftCodeAnalysisAnalyzersVersion>2.9.6</MicrosoftCodeAnalysisAnalyzersVersion>
--    <SystemRuntimeLoaderVersion>4.3.0</SystemRuntimeLoaderVersion>
--    <SystemCollectionsImmutableVersion>5.0.0</SystemCollectionsImmutableVersion>
--    <SystemReflectionMetadataVersion>5.0.0</SystemReflectionMetadataVersion>
--    <SystemCommandLineVersion>2.0.0-beta4.22272.1</SystemCommandLineVersion>
-+    <MicrosoftCodeAnalysisAnalyzersVersion>2.9.6</MicrosoftCodeAnalysisAnalyzersVersion>
-+    <SystemRuntimeLoaderVersion>4.3.0</SystemRuntimeLoaderVersion>
-+    <SystemCollectionsImmutableVersion>5.0.0</SystemCollectionsImmutableVersion>
-+    <SystemReflectionMetadataVersion>5.0.0</SystemReflectionMetadataVersion>
-+    <SystemCommandLineVersion>2.0.0-beta4.22272.1</SystemCommandLineVersion>
-   </PropertyGroup>
-
-   <ItemGroup>
-@@ -44,10 +44,10 @@
-   </ItemGroup>
-
-   <ItemGroup>
--    <NuspecProperty Include="MicrosoftCodeAnalysisAnalyzersVersion=$(MicrosoftCodeAnalysisAnalyzersVersion)" />
--    <NuspecProperty Include="SystemRuntimeLoaderVersion=$(SystemRuntimeLoaderVersion)" />
--    <NuspecProperty Include="SystemReactiveVersion=$(SystemReactiveVersion)" />
--    <NuspecProperty Include="SystemCommandLineVersion=$(SystemCommandLineVersion)" />
-+    <NuspecProperty Include="MicrosoftCodeAnalysisAnalyzersVersion=$(MicrosoftCodeAnalysisAnalyzersVersion)" />
-+    <NuspecProperty Include="SystemRuntimeLoaderVersion=$(SystemRuntimeLoaderVersion)" />
-+    <NuspecProperty Include="SystemReactiveVersion=$(SystemReactiveVersion)" />
-+    <NuspecProperty Include="SystemCommandLineVersion=$(SystemCommandLineVersion)" />
-     <NuspecProperty Include="FSharpCompilerPrivateScriptingVersion=$(FSharpCompilerPrivateScriptingVersion)" />
-   </ItemGroup>
-
 @@ -56,4 +56,8 @@
      <ProjectReference Include="$(MSBuildThisFileDirectory)..\Microsoft.DotNet.Interactive.Documents\Microsoft.DotNet.Interactive.Documents.csproj" />
    </ItemGroup>
