@@ -4,12 +4,12 @@ setlocal enabledelayedexpansion
 
 set DisableArcade=1
 
-dotnet run --project %SRC_DIR%/src/interface-generator --out-file %SRC_DIR%/src/dotnet-interactive-vscode/common/interfaces/contracts.ts
+dotnet run --project %SRC_DIR%/src/interface-generator --out-file %SRC_DIR%/src/microsoft-dotnet-interactive/src/contracts.ts
 for %%P in (
-    "%SRC_DIR%/src/dotnet-interactive-npm"
-    "%SRC_DIR%/src/dotnet-interactive-vscode/stable"
-    "%SRC_DIR%/src/dotnet-interactive-vscode/insiders"
-    "%SRC_DIR%/src/Microsoft.DotNet.Interactive.Js"
+    "%SRC_DIR%/src/microsoft-dotnet-interactive"
+    "%SRC_DIR%/src/microsoft-dotnet-interactive-browser"
+    "%SRC_DIR%/src/dotnet-interactive-vscode"
+    "%SRC_DIR%/src/dotnet-interactive-vscode-insiders"
 ) do (
     pushd %%P
     echo %%P
@@ -20,8 +20,8 @@ for %%P in (
     popd
 )
 
-dotnet pack --configuration Release --runtime win-x64 %SRC_DIR%/src/dotnet-interactive/dotnet-interactive.csproj
-dotnet tool install --framework net6.0 --add-source %SRC_DIR%/src/dotnet-interactive/bin/X64/Release --tool-path %DOTNET_TOOLS% Microsoft.dotnet-interactive
+dotnet pack --configuration Release --runtime win-x64 %SRC_DIR%/src/dotnet-interactive/dotnet-interactive.csproj /p:Version=%PKG_VERSION%
+dotnet tool install --framework net7.0 --version $PKG_VERSION --add-source %SRC_DIR%/src/dotnet-interactive/bin/X64/Release --tool-path %DOTNET_TOOLS% Microsoft.dotnet-interactive
 
 mkdir "%PREFIX%\share\jupyter"
 xcopy "%RECIPE_DIR%\kernels" "%PREFIX%\share\jupyter\kernels" /E /I /F /Y
