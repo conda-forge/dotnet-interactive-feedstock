@@ -222,6 +222,19 @@ index 615d0599..9f6938f7 100644
 +  </PropertyGroup>
 +
  </Project>
+diff --git a/src/Microsoft.DotNet.Interactive.VSCode/Microsoft.DotNet.Interactive.VSCode.csproj b/src/Microsoft.DotNet.Interactive.VSCode/Microsoft.DotNet.Interactive.VSCode.csproj
+index 2b50c5df..49792e89 100644
+--- a/src/Microsoft.DotNet.Interactive.VSCode/Microsoft.DotNet.Interactive.VSCode.csproj
++++ b/src/Microsoft.DotNet.Interactive.VSCode/Microsoft.DotNet.Interactive.VSCode.csproj
+@@ -12,4 +12,8 @@
+     <ProjectReference Include="..\Microsoft.DotNet.Interactive.FSharp\Microsoft.DotNet.Interactive.FSharp.fsproj" />
+   </ItemGroup>
+ 
++  <PropertyGroup>
++    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
++  </PropertyGroup>
++
+ </Project>
 diff --git a/src/Microsoft.DotNet.Interactive/Microsoft.DotNet.Interactive.csproj b/src/Microsoft.DotNet.Interactive/Microsoft.DotNet.Interactive.csproj
 index ff8879a8..8e687372 100644
 --- a/src/Microsoft.DotNet.Interactive/Microsoft.DotNet.Interactive.csproj
