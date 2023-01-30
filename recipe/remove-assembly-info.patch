@@ -89,6 +89,19 @@ index 0f64e304..41b25a32 100644
 +  </PropertyGroup>
 +
  </Project>
+diff --git a/src/Microsoft.DotNet.Interactive.Http/Microsoft.DotNet.Interactive.Http.csproj b/src/Microsoft.DotNet.Interactive.Http/Microsoft.DotNet.Interactive.Http.csproj
+index 9400a3b1..34416cdb 100644
+--- a/src/Microsoft.DotNet.Interactive.Http/Microsoft.DotNet.Interactive.Http.csproj
++++ b/src/Microsoft.DotNet.Interactive.Http/Microsoft.DotNet.Interactive.Http.csproj
+@@ -26,4 +26,8 @@
+     <ProjectReference Include="..\Microsoft.DotNet.Interactive\Microsoft.DotNet.Interactive.csproj" />
+   </ItemGroup>
+ 
++  <PropertyGroup>
++    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
++  </PropertyGroup>
++
+ </Project>
 diff --git a/src/Microsoft.DotNet.Interactive.HttpRequest/Microsoft.DotNet.Interactive.HttpRequest.csproj b/src/Microsoft.DotNet.Interactive.HttpRequest/Microsoft.DotNet.Interactive.HttpRequest.csproj
 index e93a1388..c3945f9e 100644
 --- a/src/Microsoft.DotNet.Interactive.HttpRequest/Microsoft.DotNet.Interactive.HttpRequest.csproj
@@ -129,12 +142,65 @@ index 443d6f7b..74193c53 100644
 +  </PropertyGroup>
 +
  </Project>
+diff --git a/src/Microsoft.DotNet.Interactive.Kql/Microsoft.DotNet.Interactive.Kql.csproj b/src/Microsoft.DotNet.Interactive.Kql/Microsoft.DotNet.Interactive.Kql.csproj
+index 1361cf63..0d9d71b1 100644
+--- a/src/Microsoft.DotNet.Interactive.Kql/Microsoft.DotNet.Interactive.Kql.csproj
++++ b/src/Microsoft.DotNet.Interactive.Kql/Microsoft.DotNet.Interactive.Kql.csproj
+@@ -51,4 +51,8 @@
+     <Folder Include="Utility\" />
+   </ItemGroup>
+ 
++  <PropertyGroup>
++    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
++  </PropertyGroup>
++
+ </Project>
 diff --git a/src/Microsoft.DotNet.Interactive.Mermaid/Microsoft.DotNet.Interactive.Mermaid.csproj b/src/Microsoft.DotNet.Interactive.Mermaid/Microsoft.DotNet.Interactive.Mermaid.csproj
 index 64c6f993..676b4bf8 100644
 --- a/src/Microsoft.DotNet.Interactive.Mermaid/Microsoft.DotNet.Interactive.Mermaid.csproj
 +++ b/src/Microsoft.DotNet.Interactive.Mermaid/Microsoft.DotNet.Interactive.Mermaid.csproj
 @@ -19,4 +19,8 @@
      <ProjectReference Include="..\Microsoft.DotNet.Interactive\Microsoft.DotNet.Interactive.csproj" />
+   </ItemGroup>
+ 
++  <PropertyGroup>
++    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
++  </PropertyGroup>
++
+ </Project>
+diff --git a/src/Microsoft.DotNet.Interactive.PackageManagement/Microsoft.DotNet.Interactive.PackageManagement.csproj b/src/Microsoft.DotNet.Interactive.PackageManagement/Microsoft.DotNet.Interactive.PackageManagement.csproj
+index d5998328..b39b24a0 100644
+--- a/src/Microsoft.DotNet.Interactive.PackageManagement/Microsoft.DotNet.Interactive.PackageManagement.csproj
++++ b/src/Microsoft.DotNet.Interactive.PackageManagement/Microsoft.DotNet.Interactive.PackageManagement.csproj
+@@ -33,4 +33,9 @@
+   <ItemGroup>
+     <ProjectReference Include="..\Microsoft.DotNet.Interactive\Microsoft.DotNet.Interactive.csproj" />
+   </ItemGroup>
++
++  <PropertyGroup>
++    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
++  </PropertyGroup>
++
+ </Project>
+diff --git a/src/Microsoft.DotNet.Interactive.PowerShell/Microsoft.DotNet.Interactive.PowerShell.csproj b/src/Microsoft.DotNet.Interactive.PowerShell/Microsoft.DotNet.Interactive.PowerShell.csproj
+index 28fe8529..72c29178 100644
+--- a/src/Microsoft.DotNet.Interactive.PowerShell/Microsoft.DotNet.Interactive.PowerShell.csproj
++++ b/src/Microsoft.DotNet.Interactive.PowerShell/Microsoft.DotNet.Interactive.PowerShell.csproj
+@@ -53,4 +53,8 @@
+     <PackageReference Include="Microsoft.PowerShell.SDK" Version="7.3.0" />
+   </ItemGroup>
+ 
++  <PropertyGroup>
++    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
++  </PropertyGroup>
++
+ </Project>
+diff --git a/src/Microsoft.DotNet.Interactive.SqlServer/Microsoft.DotNet.Interactive.SqlServer.csproj b/src/Microsoft.DotNet.Interactive.SqlServer/Microsoft.DotNet.Interactive.SqlServer.csproj
+index 4b6cf230..223e4c0d 100644
+--- a/src/Microsoft.DotNet.Interactive.SqlServer/Microsoft.DotNet.Interactive.SqlServer.csproj
++++ b/src/Microsoft.DotNet.Interactive.SqlServer/Microsoft.DotNet.Interactive.SqlServer.csproj
+@@ -53,4 +53,8 @@
+     <Folder Include="Utility\" />
    </ItemGroup>
  
 +  <PropertyGroup>
