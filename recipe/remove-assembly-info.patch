@@ -1,14 +1,14 @@
-diff --git a/src/dotnet-interactive/dotnet-interactive.csproj b/src/dotnet-interactive/dotnet-interactive.csproj
-index 219241b4..be414286 100644
---- a/src/dotnet-interactive/dotnet-interactive.csproj
-+++ b/src/dotnet-interactive/dotnet-interactive.csproj
-@@ -178,5 +178,9 @@
-     <Message Text="##vso[task.setvariable variable=StableToolVersionNumber]$(Version)" Importance="high" />
-   </Target>
-
-+  <PropertyGroup>
-+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-+  </PropertyGroup>
+diff --git a/src/Microsoft.DotNet.Interactive.Telemetry/Microsoft.DotNet.Interactive.Telemetry.csproj b/src/Microsoft.DotNet.Interactive.Telemetry/Microsoft.DotNet.Interactive.Telemetry.csproj
+index 615d0599..5dda60a3 100644
+--- a/src/Microsoft.DotNet.Interactive.Telemetry/Microsoft.DotNet.Interactive.Telemetry.csproj
++++ b/src/Microsoft.DotNet.Interactive.Telemetry/Microsoft.DotNet.Interactive.Telemetry.csproj
+@@ -11,4 +11,9 @@
+     <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
+     <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+   </ItemGroup>
++
++<PropertyGroup>
++  <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
++</PropertyGroup>
 +
  </Project>
-
