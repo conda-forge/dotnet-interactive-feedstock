@@ -1,0 +1,14 @@
+diff --git a/src/dotnet-interactive/dotnet-interactive.csproj b/src/dotnet-interactive/dotnet-interactive.csproj
+index 219241b4..be414286 100644
+--- a/src/dotnet-interactive/dotnet-interactive.csproj
++++ b/src/dotnet-interactive/dotnet-interactive.csproj
+@@ -178,5 +178,9 @@
+     <Message Text="##vso[task.setvariable variable=StableToolVersionNumber]$(Version)" Importance="high" />
+   </Target>
+
++  <PropertyGroup>
++    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
++  </PropertyGroup>
++
+ </Project>
+
