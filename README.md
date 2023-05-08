@@ -1,11 +1,11 @@
-About dotnet-interactive
-========================
+About dotnet-interactive-feedstock
+==================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dotnet-interactive-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/dotnet/interactive
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dotnet-interactive-feedstock/blob/main/LICENSE.txt)
 
 Summary: .NET Interactive takes the power of .NET and embeds it into your interactive experiences
 
