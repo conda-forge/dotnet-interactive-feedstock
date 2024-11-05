@@ -1,5 +1,5 @@
 {% set name = "dotnet-interactive" %}
-{% set version = "1.0.3606021" %}
+{% set version = "1.0.4461040" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://github.com/dotnet/interactive/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: ad8f1d6dc4cdaa90065ef57e870f6636d1f471cf9628c5d95744741b635d2e52
+  sha256: 26915aa312e9ef6c8be95ba07223e4cbd49ac0a93f87eeb7c5ec36d9c450f28b
   # patches:
   #  - remove-assembly-info.patch
 
 build:
   skip: true  # [not linux]
-  number: 1
+  number: 0
 
 requirements:
   build:
