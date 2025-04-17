@@ -1,33 +1,51 @@
-#!/bin/bash
-set -euox pipefail
+#!/usr/bin/env bash
 
-export DisableArcade=1
-export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
+set -o xtrace -o nounset -o pipefail -o errexit
 
-dotnet run --project $SRC_DIR/src/interface-generator --out-file $SRC_DIR/src/microsoft-dotnet-interactive/src/contracts.ts
+mkdir -p ${PREFIX}/bin
+mkdir -p ${PREFIX}/libexec/${PKG_NAME}
+ln -sf ${DOTNET_ROOT}/dotnet ${PREFIX}/bin
+ln -sf ${PREFIX}/bin/webpack-cli ${PREFIX}/bin/webpack
 
-# https://github.com/dotnet/interactive/blob/d0aa0c06e25ba19cb6085d7a9641c1ecb1a9ee59/eng/build.sh#L45-L48
-npm_dirs=(
-    "$SRC_DIR/src/microsoft-dotnet-interactive"
-    "$SRC_DIR/src/microsoft-dotnet-interactive-browser"
-    "$SRC_DIR/src/dotnet-interactive-vscode"
-    "$SRC_DIR/src/dotnet-interactive-vscode-insiders"
-)
-for npm_dir in ${npm_dirs[@]}; do
-    pushd $npm_dir
-    echo $npm_dir
-    npm ci
-    npm run compile
-    popd
-done
+# Build package with dotnet publish
+cp global.json global.json_old
+jq 'del(.sdk)' global.json_old | jq 'del(.tools)' > global.json
+framework_version="$(dotnet --version | sed -e 's/\..*//g').0"
 
-dotnet pack --configuration Release --runtime linux-x64 $SRC_DIR/src/dotnet-interactive/dotnet-interactive.csproj
-dotnet tool install --framework net7.0 --add-source $SRC_DIR/src/dotnet-interactive/bin/Release --tool-path $DOTNET_TOOLS Microsoft.dotnet-interactive
+sed -i "s?<TargetFramework>.*</TargetFramework>?<TargetFramework>net${framework_version}</TargetFramework>?" \
+    src/dotnet-interactive/dotnet-interactive.csproj
 
-mkdir "$PREFIX/share/jupyter"
-cp -Rv "$RECIPE_DIR/kernels" "$PREFIX/share/jupyter/kernels"
+rm -rf ${SRC_DIR}/src/polyglot-notebooks-browser/src/polyglot-notebooks
+ln -sf ${SRC_DIR}/src/polyglot-notebooks/src ${SRC_DIR}/src/polyglot-notebooks-browser/src/polyglot-notebooks
 
-mkdir -p "${PREFIX}/etc/conda/activate.d"
-mkdir -p "${PREFIX}/etc/conda/deactivate.d"
-cp -r "${RECIPE_DIR}/activate.d/." "${PREFIX}/etc/conda/activate.d/"
-cp -r "${RECIPE_DIR}/deactivate.d/." "${PREFIX}/etc/conda/deactivate.d/"
+pushd ${SRC_DIR}/src/polyglot-notebooks
+npm ci
+npm run compile
+popd
+pushd ${SRC_DIR}/src/polyglot-notebooks-browser
+npm ci
+npm run compile
+popd
+
+dotnet publish --no-self-contained src/dotnet-interactive/dotnet-interactive.csproj --output ${PREFIX}/libexec/${PKG_NAME}
+rm -rf ${PREFIX}/libexec/${PKG_NAME}/runtimes
+rm -rf ${PREFIX}/libexec/${PKG_NAME}/Microsoft.DotNet.Interactive.App
+rm ${PREFIX}/bin/dotnet
+
+tee ignored_packages.json << EOF
+["AsyncIO", "Json.More.Net", "JsonPointer.Net","Microsoft.DotNet.PlatformAbstractions", "Microsoft.Management.Infrastructure.Runtime.Win"]
+EOF
+dotnet-project-licenses --input src/dotnet-interactive/dotnet-interactive.csproj -t -d license-files -ignore ignored_packages.json
+
+# Create bash and batch wrappers
+tee ${PREFIX}/bin/dotnet-interactive << EOF
+#!/bin/sh
+exec \${DOTNET_ROOT}/dotnet exec \${CONDA_PREFIX}/libexec/dotnet-interactive/Microsoft.DotNet.Interactive.App.dll "\$@"
+EOF
+chmod +x ${PREFIX}/bin/dotnet-interactive
+
+tee ${PREFIX}/bin/dotnet-interactive.cmd << EOF
+call %DOTNET_ROOT%\dotnet exec %CONDA_PREFIX%\libexec\dotnet-interactive\Microsoft.DotNet.Interactive.App.dll %*
+EOF
+
+rm ${PREFIX}/bin/webpack
