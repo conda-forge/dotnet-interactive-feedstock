@@ -5,7 +5,6 @@ set -o xtrace -o nounset -o pipefail -o errexit
 mkdir -p ${PREFIX}/bin
 mkdir -p ${PREFIX}/libexec/${PKG_NAME}
 ln -sf ${DOTNET_ROOT}/dotnet ${PREFIX}/bin
-ln -sf ${PREFIX}/bin/webpack-cli ${PREFIX}/bin/webpack
 
 # Build package with dotnet publish
 cp global.json global.json_old
@@ -47,5 +46,3 @@ chmod +x ${PREFIX}/bin/dotnet-interactive
 tee ${PREFIX}/bin/dotnet-interactive.cmd << EOF
 call %DOTNET_ROOT%\dotnet exec %CONDA_PREFIX%\libexec\dotnet-interactive\Microsoft.DotNet.Interactive.App.dll %*
 EOF
-
-rm ${PREFIX}/bin/webpack
