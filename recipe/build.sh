@@ -32,7 +32,7 @@ rm -rf ${PREFIX}/libexec/${PKG_NAME}/Microsoft.DotNet.Interactive.App
 rm ${PREFIX}/bin/dotnet
 
 tee ignored_packages.json << EOF
-["AsyncIO", "Json.More.Net", "JsonPointer.Net","Microsoft.DotNet.PlatformAbstractions", "Microsoft.Management.Infrastructure.Runtime.Win"]
+["AsyncIO", "Json.More.Net", "JsonPointer.Net","Microsoft.DotNet.PlatformAbstractions", "Microsoft.Management.Infrastructure.Runtime.Win", "Pocket.TypeDiscovery"]
 EOF
 dotnet-project-licenses --input src/dotnet-interactive/dotnet-interactive.csproj -t -d license-files -ignore ignored_packages.json
 

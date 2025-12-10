@@ -30,7 +30,7 @@ tests:
 about:
   license: MIT
   license_file:
-    - LICENSE
+    - License.txt
     - license-files/
   summary: .NET Interactive combines the power of .NET with many other languages to create notebooks, REPLs, and embedded coding experiences.
   homepage: https://github.com/dotnet/interactive
