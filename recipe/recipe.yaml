@@ -1,5 +1,5 @@
 context:
-  version: 1.0.6160010
+  version: "1.0.6160011"
 
 package:
   name: dotnet-interactive
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/dotnet/interactive/archive/v${{ version }}.tar.gz
-  sha256: ab7f9c87688dc9673faf1eb1cec2319c800bca7d1ceec3a9efccbeaeeeba6ae0
+  sha256: aa43e11093268574324d3882b3ff52defec4d79d856ce35f1ef893e5b0b7358d
 
 build:
   noarch: generic
